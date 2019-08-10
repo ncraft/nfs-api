@@ -9,8 +9,26 @@ The changes to provide remote access via TCP, instead of unix domain sockets, sh
 
 ## Usage
 
-Use `curl` or a simple Go [program](https://gist.github.com/teknoraver/5ffacb8757330715bcbcc90e6d46ac74) to post HTTP requests against the unix domain socket:
+Example JSON request body to add an NFS share for IPs `192.168.1.110` and `192.168.1.112` to directory `/var/nfs/pictures`:
+```json
+{
+  "sharePath": "/var/nfs/pictures",
+  "exportOptions": {
+    "clients": [
+      "192.168.1.110",
+      "192.168.1.112"
+    ],
+    "rw": true,
+    "sync": true,
+    "noSubtreeCheck": true
+  },
+  "mkDir": true,
+  "dirOwnerUid": 33,
+  "dirOwnerGid": 33
+}
+```
 
+Use `curl` or a simple Go [program](https://gist.github.com/teknoraver/5ffacb8757330715bcbcc90e6d46ac74) to post HTTP requests against the unix domain socket:
 ```bash
 $ ./unix-socket-client -d '{"sharePath": "/var/nfs/pictures", "exportOptions": {"clients": ["192.168.1.110", "192.168.1.112"], "rw": true, "sync": true, "noSubtreeCheck": true}, "mkDir":true, "dirOwnerUid":33, "dirOwnerGid":33}' /path/to/socket /shares
 
