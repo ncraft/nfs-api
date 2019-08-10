@@ -1,3 +1,4 @@
+// Package nfs provides functions to manage linux NFS shares.
 package nfs
 
 import (
@@ -15,6 +16,7 @@ const defaultExportsFile = "/etc/exports"
 
 var mu sync.Mutex
 
+// Add creates an NFS share as specified by the share request.
 func Add(request *types.ShareRequest) error {
 	mu.Lock()
 	defer mu.Unlock()
