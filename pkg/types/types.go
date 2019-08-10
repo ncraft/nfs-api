@@ -10,11 +10,13 @@ import (
 	"strings"
 )
 
+// ShareResponse informs about the outcome of a ShareRequest.
 type ShareResponse struct {
 	Status  int    `json:"status"`
 	Message string `json:"message"`
 }
 
+// ShareRequest allows to specify a request for a NFS share.
 type ShareRequest struct {
 	SharePath     string        `json:"sharePath"`
 	ExportOptions ExportOptions `json:"exportOptions"`
@@ -23,6 +25,7 @@ type ShareRequest struct {
 	DirOwnerGid   int           `json:"dirOwnerGid"`
 }
 
+// ExportOptions represent NFS attributes.
 type ExportOptions struct {
 	Clients        []string `json:"clients"`
 	Rw             bool     `json:"rw"`
@@ -80,10 +83,10 @@ func optsStr(o ExportOptions) string {
 	return strings.Trim(buffer.String(), ",")
 }
 
-func DecodeShareRequest(body io.ReadCloser) (*ShareRequest, error) {
-	decoder := json.NewDecoder(body)
+// JsonDecode decodes to ShareRequest.
+func JsonDecode(shareRequestJson io.Reader) (*ShareRequest, error) {
 	var shareRequest ShareRequest
-	err := decoder.Decode(&shareRequest)
+	err := json.NewDecoder(shareRequestJson).Decode(&shareRequest)
 	if err != nil {
 		return nil, err
 	}

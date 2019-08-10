@@ -29,7 +29,7 @@ func addShare(w http.ResponseWriter, r *http.Request) {
 		})
 	}
 
-	shareRequest, err := types.DecodeShareRequest(r.Body)
+	shareRequest, err := types.JsonDecode(r.Body)
 	if err != nil {
 		errorHandler(http.StatusInternalServerError, err.Error())
 		return
