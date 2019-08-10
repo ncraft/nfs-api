@@ -1,3 +1,5 @@
+[![GoDoc](https://godoc.org/github.com/ncraft/nfs-api?status.svg)](http://godoc.org/github.com/ncraft/nfs-api)
+
 # API to manage NFS shares
 
 ## Description
