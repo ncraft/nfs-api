@@ -38,9 +38,7 @@ func TestJsonDecodeMissingRequiredProperties(t *testing.T) {
 	_, err := JsonDecode(strings.NewReader(incompleteTestRequest))
 	assert(t).err(err, t)
 
-	if err.Error() != "required properties of share request are missing" {
-		t.Error("unexpected error message")
-	}
+	assert(t).equals(err.Error(), "required properties of share request are missing")
 }
 
 func (a *asserter) equals(actual, expected interface{}) {
