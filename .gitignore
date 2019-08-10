@@ -1,0 +1,5 @@
+.env
+.env.prod
+vendor/
+.idea
+set-local-dev.sh
