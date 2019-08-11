@@ -4,9 +4,9 @@
 
 ## Description
 
-Provides a tiny REST API via unix domain socket which can be used to add NFS shares (`/etc/exports` on must linux systems).
+Provides a tiny REST API via unix domain socket which can be used to add NFS shares (`/etc/exports` on most linux systems).
 
-The changes to provide remote access via TCP, instead of unix domain sockets, should be really small but that's beyond the scope of this project. Probably, to implement scenarios with remote access, it would be more appropriate to call this service from a wep app which runs on the same node but does not require permissions to manipulate `/etc/exports`.
+The changes to provide remote access via TCP, instead of unix domain sockets, should be really small but that's beyond the scope of this project. Probably, to implement scenarios with remote access it would be more appropriate to call this service from a wep app which runs on the same node but does not require privileges to manipulate `/etc/exports`, thus splitting privileged and unprivileged parts over different services.
 
 
 ## Usage

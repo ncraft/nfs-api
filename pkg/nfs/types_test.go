@@ -1,4 +1,4 @@
-package types
+package nfs
 
 import (
 	"reflect"

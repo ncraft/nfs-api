@@ -5,7 +5,6 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"github.com/ncraft/nfs-api/pkg/types"
 	"io/ioutil"
 	"os"
 	"os/exec"
@@ -17,7 +16,7 @@ const defaultExportsFile = "/etc/exports"
 var mu sync.Mutex
 
 // Add creates an NFS share as specified by the share request.
-func Add(request *types.ShareRequest) error {
+func Add(request *ShareRequest) error {
 	mu.Lock()
 	defer mu.Unlock()
 

@@ -1,12 +1,11 @@
 package nfs
 
 import (
-	"github.com/ncraft/nfs-api/pkg/types"
 	"testing"
 )
 
 func TestExportOptionsStringerNoRootSquash(t *testing.T) {
-	opts := types.ExportOptions{
+	opts := ExportOptions{
 		Clients:        []string{"181.128.88.50", "184.121.78.14"},
 		Rw:             true,
 		Sync:           true,
@@ -21,7 +20,7 @@ func TestExportOptionsStringerNoRootSquash(t *testing.T) {
 }
 
 func TestExportOptionsStringerRootSquash(t *testing.T) {
-	opts := types.ExportOptions{
+	opts := ExportOptions{
 		Clients:        []string{"181.128.88.50", "184.121.78.14"},
 		Rw:             true,
 		Sync:           true,
