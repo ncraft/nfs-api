@@ -1,0 +1,4 @@
+github.com/gorilla/mux v1.7.3/go.mod h1:1lud6UwP+6orDFRuTfBEV8e9/aOM/c4fVVCaMa2zaAs=
+github.com/joho/godotenv v1.3.0/go.mod h1:7hK45KPybAkOC6peb+G5yklZfMxEjkZhHbwpqxOKXbg=
+github.com/ncraft/machinery v0.0.2 h1:fhRf/TkYtwf1E/GDdDDsuYZvkh3QZ4zyiO9KjOeY3NI=
+github.com/ncraft/machinery v0.0.2/go.mod h1:tkhIEIhX2yHAuHjN5m34AWnDqWfM5gPOvxbOpLU9pPQ=
