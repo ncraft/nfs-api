@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
-	util "github.com/ncraft/go-util/pkg/base"
+	util "github.com/ncraft/machinery/pkg/base"
 	"io"
 	"log"
 	"strings"

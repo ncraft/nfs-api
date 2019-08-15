@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
-	util "github.com/ncraft/go-util/pkg/base"
+	util "github.com/ncraft/machinery/pkg/base"
 	"github.com/ncraft/nfs-api/pkg/nfs"
 	"log"
 	"net"
